@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 499788784}
   - component: {fileID: 499788783}
   - component: {fileID: 499788785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: test-platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 903739031}
   - component: {fileID: 903739035}
   - component: {fileID: 903739036}
+  - component: {fileID: 903739037}
   m_Layer: 0
   m_Name: Charcter
   m_TagString: Untagged
@@ -454,8 +455,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 5
+  m_Material: {fileID: 6200000, guid: d57b8381129e64879ac7eaa81b673991, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -513,9 +514,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 903739030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.47, y: -1.02, z: -0.08538435}
+  m_LocalPosition: {x: -9.04, y: -1.15, z: -0.08538435}
   m_LocalScale: {x: 4, y: 4, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1919155346}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -543,7 +545,7 @@ Animator:
   m_GameObject: {fileID: 903739030}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c6fff6bffe23143dbb9419564a83b81e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4cfdde040a5984389b7cce9718e94e84, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -552,6 +554,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &903739037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903739030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e67a63adb394a34a75dc1ce2f16f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+  jumpForce: 10
+  feetPos: {fileID: 1919155346}
+  checkRadius: 0.3
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  jumpTime: 0.35
 --- !u!1 &1004977185
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +583,7 @@ GameObject:
   - component: {fileID: 1004977187}
   - component: {fileID: 1004977186}
   - component: {fileID: 1004977188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: test-platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,3 +674,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 65.92, y: 3.72}
   m_EdgeRadius: 0
+--- !u!1 &1919155345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1919155346}
+  m_Layer: 0
+  m_Name: Feet Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1919155346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1919155345}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.354, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 903739034}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
